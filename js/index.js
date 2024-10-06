@@ -11,15 +11,27 @@ const displayCategories = (categories) => {
 
   categories.forEach((item) => {
     const buttonContainer = document.createElement("div");
-    buttonContainer.innerHTML = `   <div
-          class="flex justify-center items-center gap-2 font-bold rounded-lg border-2 py-2"
+    buttonContainer.classList.add("flex")
+    buttonContainer.classList.add("justify-center")
+    buttonContainer.classList.add("items-center")
+    buttonContainer.innerHTML = `   
+        <button
+          onclick="loadPetCategory('${item.category}')" class="flex justify-center items-center gap-2 font-bold rounded-lg border-2 px-10 py-2"
         >
           <img src="${item.category_icon}" alt="Icon of the category" />
-          <button id="btn-${item.category_id}">${item.category}</button>
-        </div>
+          <p">${item.category}</p>
+        </button>
     `;
     categoryContainer.append(buttonContainer);
   });
+};
+
+loadPetCategory = async (category) => {
+  const response = await fetch(
+    `https://openapi.programming-hero.com/api/peddy/category/${category}`
+  );
+  const data = await response.json();
+  displayAllPets(data.data);
 };
 
 loadAllPets = async () => {
@@ -32,6 +44,7 @@ loadAllPets = async () => {
 
 const displayAllPets = (pets) => {
   const cardsConainter = document.getElementById("cards-container");
+  cardsConainter.innerHTML = "";
 
   pets.forEach((pet) => {
     const card = document.createElement("div");
