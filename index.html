@@ -13,13 +13,20 @@
 
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/ad7acb9d45.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
+      <!-- Navbar section -->
       <nav class="w-11/12 mx-auto flex justify-between items-center p-4">
         <div class="flex justify-between items-center gap-2">
           <img src="./images/logo.webp" alt="Image of the logo" />
-          <h class="font-bold text-2xl">Peddy</h1>
+          <h1 class="font-bold text-2xl">Peddy</h1>
         </div>
         <div class="hidden md:flex justify-between items-center gap-4">
           <p>Home</p>
@@ -27,18 +34,32 @@
           <p>Contact</p>
         </div>
         <div class="block md:hidden">
-            <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
         <div>
-          <i class="fa-regular fa-user border-2 rounded-full p-2 "></i>
+          <i class="fa-regular fa-user border-2 rounded-full p-2"></i>
         </div>
       </nav>
+
+      <!-- Banner section -->
+      <section
+        class="mt-14 w-11/12 mx-auto flex flex-col justify-between items-center gap-4"
+      >
+        <h2 class="font-extralight text-xl">Bringing Families Together ❤️‍🔥</h2>
+        <h1 class="font-bold text-3xl md:text-6xl w-1/2 text-center">
+          Your Path to Adoption Starts Here
+        </h1>
+        <p class="w-3/4 text-center">
+          We have a great selection of animals below for you to choose and to
+          take home with you so that you can provide support and care for the
+          animal as your pet.
+        </p>
+        <a href=""
+          ><button class="btn bg-teal-800 text-white">View More</button></a
+        >
+      </section>
     </header>
 
     <script src="./js/index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/ad7acb9d45.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
