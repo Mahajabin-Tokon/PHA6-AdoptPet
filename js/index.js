@@ -57,7 +57,9 @@ const displayAllPets = (pets) => {
               <hr />
             </div>
             <div class="flex gap-2 justify-center">
-              <button class="btn bg-white border-1 text-teal-800">
+              <button onclick="petLiked('${
+                pet.image
+              }')" class="btn bg-white border-1 text-teal-800">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
               <button class="btn bg-white border-1 text-teal-800">Adopt</button>
@@ -75,34 +77,47 @@ const displayAllPets = (pets) => {
   });
 };
 
+petLiked = (petImage) => {
+  const lickedContainer = document.getElementById("liked-container");
+  const likedImg = document.createElement("img");
+  likedImg.src = `${petImage}`;
+  likedImg.classList.add("rounded-xl");
+  //   likedImg.classList.add("max-h-20")
+  //   likedImg.innerHTML = `<img class="rounded-lg m-2 object-cover" src="${petImage}" alt="Image of pet">`;
+  lickedContainer.appendChild(likedImg);
+};
+
 petDetails = async (id) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/pet/${id}`
   );
 
   const data = await response.json();
-  const pet = data.petData
-  console.log(pet.image)
+  const pet = data.petData;
 
+  displayModal(pet);
+};
+
+displayModal = (pet) => {
   const modalBox = document.getElementById("modal-content");
 
   modalBox.innerHTML = `
    <div>
         <img class="rounded-xl h-full w-full object-cover" src="${
-        pet.image
+          pet.image
         }" alt="Image of pet" />
     </div>
     <div class="space-y-1">
         <h1 class="text-xl font-bold">${pet.pet_name}</h1>
         <p>Breed: ${pet.breed ? pet.breed : "Not Available"}</p>
         <p><i class="fa-regular fa-calendar"></i> Birth: ${
-        pet.date_of_birth ? pet.date_of_birth : "Not Available"
+          pet.date_of_birth ? pet.date_of_birth : "Not Available"
         }</p>
         <p><i class="fa-solid fa-mercury"></i> Gender: ${
-        pet.gender ? pet.gender : "Not Available"
+          pet.gender ? pet.gender : "Not Available"
         }</p>
         <p><i class="fa-solid fa-dollar-sign"></i> Price: ${
-        pet.price ? pet.price : "Not Available"
+          pet.price ? pet.price : "Not Available"
         }</p>
         <hr />
     </div>
