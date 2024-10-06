@@ -11,9 +11,9 @@ const displayCategories = (categories) => {
 
   categories.forEach((item) => {
     const buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("flex")
-    buttonContainer.classList.add("justify-center")
-    buttonContainer.classList.add("items-center")
+    buttonContainer.classList.add("flex");
+    buttonContainer.classList.add("justify-center");
+    buttonContainer.classList.add("items-center");
     buttonContainer.innerHTML = `   
         <button
           onclick="loadPetCategory('${item.category}')" class="flex justify-center items-center gap-2 font-bold rounded-lg border-2 px-10 py-2"
@@ -145,6 +145,18 @@ displayModal = (pet) => {
   `;
 
   document.getElementById("petModal").showModal();
+};
+
+const sortByPrice = async () => {
+  const response = await fetch(
+    "https://openapi.programming-hero.com/api/peddy/pets"
+  );
+  const data = await response.json();
+  petsArray = data.pets;
+
+  const compareByPrice = (a, b) => b.price - a.price;
+  const sortedPets = petsArray.sort(compareByPrice);
+  displayAllPets(sortedPets);
 };
 
 loadCategories();
