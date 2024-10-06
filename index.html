@@ -54,14 +54,14 @@
           take home with you so that you can provide support and care for the
           animal as your pet.
         </p>
-        <a href=""
+        <a href="#main-section"
           ><button class="btn bg-teal-800 text-white">View More</button></a
         >
         <img src="./images/pet.webp" alt="Image of a dog and cat" />
       </section>
     </header>
 
-    <main>
+    <main id="main-section">
       <!-- About section -->
       <section
         class="mt-14 w-11/12 mx-auto flex flex-col justify-between items-center gap-4"
@@ -75,7 +75,10 @@
       </section>
 
       <!-- Category section -->
-      <section></section>
+      <section
+        id="category"
+        class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-10"
+      ></section>
 
       <!-- Sort section -->
       <section
@@ -86,10 +89,19 @@
       </section>
 
       <!-- Pets section -->
-      <section></section>
+      <section class="w-11/12 mx-auto grid gap-2 grid-cols-1 md:grid-cols-4">
+        <div id="cards-container" class="col-span-3 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          
+        </div>
+
+        <div class="border-2 rounded-lg"></div>
+      </section>
     </main>
 
-    <footer class="mt-14 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-4 bg-black text-gray-400 p-20">
+    <!-- Footer section -->
+    <footer
+      class="mt-14 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-4 bg-black text-gray-400 p-20"
+    >
       <div class="flex flex-col justify-start items-start">
         <div class="flex items-center gap-2 mb-8 text-white">
           <img src="./images/logo.webp" alt="Image of the logo" />
@@ -102,26 +114,32 @@
           <p>Openings hours: 9.00 AM - 5.00 PM</p>
         </div>
         <div class="flex justify-start items-center mt-2">
-            <img src="./images/icons8-facebook-48.png" alt="Facebook icon">
-            <img src="./images/icons8-twitter-32.png" alt="Twitter icon">
-            <img src="./images/icons8-youtube-48.png" alt="Youtube icon">
-            <img src="./images/icons8-instagram-48.png" alt="Instagram icon">
+          <img src="./images/icons8-facebook-48.png" alt="Facebook icon" />
+          <img src="./images/icons8-twitter-32.png" alt="Twitter icon" />
+          <img src="./images/icons8-youtube-48.png" alt="Youtube icon" />
+          <img src="./images/icons8-instagram-48.png" alt="Instagram icon" />
         </div>
       </div>
       <div class="flex flex-col justify-start items-start">
         <ul>
-           <li class="text-white mb-8">Useful Links</li>
-           <li>Home</li>
-           <li>About us</li>
-           <li>Animals</li>
-           <li>Foundation</li>
-           <li>Contact</li> 
+          <li class="text-white mb-8">Useful Links</li>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Animals</li>
+          <li>Foundation</li>
+          <li>Contact</li>
         </ul>
       </div>
       <div class="flex flex-col justify-start items-start">
-        <h2 class="text-white mb-8 ">Drop a Message</h2>
-        <input class="bg-slate-800 px-4 py-2 my-2 rounded-xl w-3/4" type="text" placeholder="Enter your email"/>
-        <button class="bg-teal-800 text-white px-4 py-2 my-2 rounded-xl w-3/4">Subscribe</button>
+        <h2 class="text-white mb-8">Drop a Message</h2>
+        <input
+          class="bg-slate-800 px-4 py-2 my-2 rounded-xl w-3/4"
+          type="text"
+          placeholder="Enter your email"
+        />
+        <button class="bg-teal-800 text-white px-4 py-2 my-2 rounded-xl w-3/4">
+          Subscribe
+        </button>
       </div>
     </footer>
 
