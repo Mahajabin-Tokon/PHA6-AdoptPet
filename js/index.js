@@ -43,10 +43,10 @@ const displayAllPets = (pets) => {
             </div>
             <div class="">
               <h1 class="text-xl font-bold">${pet.pet_name}</h1>
-              <p>Breed: ${pet.breed}</p>
-              <p><i class="fa-regular fa-calendar"></i> Birth: ${pet.date_of_birth}</p>
-              <p><i class="fa-solid fa-mercury"></i> Gender: ${pet.gender}</p>
-              <p><i class="fa-solid fa-dollar-sign"></i> Price: ${pet.price}</p>
+              <p>Breed: ${pet.breed ? pet.breed : "Not Available"}</p>
+              <p><i class="fa-regular fa-calendar"></i> Birth: ${pet.date_of_birth ? pet.date_of_birth : "Not Available"}</p>
+              <p><i class="fa-solid fa-mercury"></i> Gender: ${pet.gender ? pet.gender : "Not Available"}</p>
+              <p><i class="fa-solid fa-dollar-sign"></i> Price: ${pet.price ? pet.price : "Not Available"}</p>
               <hr />
             </div>
             <div class="flex gap-2 justify-center">
