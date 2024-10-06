@@ -31,7 +31,18 @@ loadPetCategory = async (category) => {
     `https://openapi.programming-hero.com/api/peddy/category/${category}`
   );
   const data = await response.json();
-  displayAllPets(data.data);
+
+  const cardsConainter = document.getElementById("cards-container");
+  cardsConainter.classList.remove("grid");
+
+  cardsConainter.innerHTML = `
+    <div class="flex flex-col gap-5 justify-center items-center p-5 bg-slate-300 rounded-xl">
+      <span class="loading loading-bars loading-lg"></span>
+    </div>`;
+
+  setTimeout(() => {
+    displayAllPets(data.data);
+  }, 2000);
 };
 
 loadAllPets = async () => {
@@ -45,9 +56,8 @@ loadAllPets = async () => {
 const displayAllPets = (pets) => {
   const cardsConainter = document.getElementById("cards-container");
   cardsConainter.innerHTML = "";
-  
+
   if (pets.length == 0) {
-    console.log(pets.length)
     cardsConainter.classList.remove("grid");
     cardsConainter.innerHTML = `
     <div class="flex flex-col gap-5 justify-center items-center p-5 bg-slate-300 rounded-xl">
@@ -61,7 +71,7 @@ const displayAllPets = (pets) => {
 
   pets.forEach((pet) => {
     const card = document.createElement("div");
-    
+
     card.innerHTML = ` 
     <div class="flex flex-col justify-center space-y-2 p-2 border-2 rounded-lg">
             <div>
