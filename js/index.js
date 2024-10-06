@@ -45,9 +45,23 @@ loadAllPets = async () => {
 const displayAllPets = (pets) => {
   const cardsConainter = document.getElementById("cards-container");
   cardsConainter.innerHTML = "";
+  
+  if (pets.length == 0) {
+    console.log(pets.length)
+    cardsConainter.classList.remove("grid");
+    cardsConainter.innerHTML = `
+    <div class="flex flex-col gap-5 justify-center items-center p-5 bg-slate-300 rounded-xl">
+      <img src="./images/error.webp" /> 
+      <h1 class="text-center text-xl font-bold"> No Information Available</h1> 
+      <p>We do not carry any birds as pet options.</p>
+    </div>`;
+  } else {
+    cardsConainter.classList.add("grid");
+  }
 
   pets.forEach((pet) => {
     const card = document.createElement("div");
+    
     card.innerHTML = ` 
     <div class="flex flex-col justify-center space-y-2 p-2 border-2 rounded-lg">
             <div>
