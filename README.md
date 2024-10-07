@@ -6,8 +6,8 @@ This is website for pet adoption. You can view available pets and filter via ani
 
 # 5 key features of the project:
 1. The web page dynamically loads data from an API and displays it
-2. It has the option to filter diplayed data via categories
-3. One can like a specific pet and have it added to list to refer back later
+2. It has the option to filter displayed data via categories
+3. One can like a specific pet and have it added to a list to refer back later
 4. Clicking on details for each pet displays a dynamically rendered modal
 5. Clicking the adopt button for each pet displays a countdown and changes the button
 
