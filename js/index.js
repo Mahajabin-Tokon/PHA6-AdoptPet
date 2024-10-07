@@ -36,7 +36,7 @@ loadPetCategory = async (category) => {
   cardsConainter.classList.remove("grid");
 
   const allCategoryButtons = document.getElementsByClassName("category-btns");
-  
+
   for (let btn of allCategoryButtons) {
     btn.classList.remove("bg-teal-400");
     btn.classList.remove("rounded-full");
@@ -44,7 +44,7 @@ loadPetCategory = async (category) => {
   }
 
   const activeBtn = document.getElementById(`btn-${category}`);
-  
+
   activeBtn.classList.remove("rounded-lg");
   activeBtn.classList.add("bg-teal-400");
   activeBtn.classList.add("rounded-full");
@@ -96,7 +96,9 @@ const displayAllPets = (pets) => {
             </div>
             <div class="">
               <h1 class="text-xl font-bold">${pet.pet_name}</h1>
-              <p>Breed: ${pet.breed ? pet.breed : "Not Available"}</p>
+              <p><i class="fa-solid fa-qrcode"></i> Breed: ${
+                pet.breed ? pet.breed : "Not Available"
+              }</p>
               <p><i class="fa-regular fa-calendar"></i> Birth: ${
                 pet.date_of_birth ? pet.date_of_birth : "Not Available"
               }</p>
@@ -114,7 +116,9 @@ const displayAllPets = (pets) => {
               }')" class="btn bg-white border-1 text-teal-800">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
-              <button id="adopt-btn-${pet.petId}" onclick="displayAdoptModal(${pet.petId})" class="btn bg-white border-1 text-teal-800">Adopt</button>
+              <button id="adopt-btn-${pet.petId}" onclick="displayAdoptModal(${
+      pet.petId
+    })" class="btn bg-white border-1 text-teal-800">Adopt</button>
               <button onclick="petDetails(${
                 pet.petId
               })" class="btn bg-white border-1 text-teal-800">
@@ -161,16 +165,20 @@ displayModal = (pet) => {
     </div>
     <div class="space-y-1">
         <h1 class="text-xl font-bold">${pet.pet_name}</h1>
-        <p>Breed: ${pet.breed ? pet.breed : "Not Available"}</p>
-        <p><i class="fa-regular fa-calendar"></i> Birth: ${
-          pet.date_of_birth ? pet.date_of_birth : "Not Available"
-        }</p>
-        <p><i class="fa-solid fa-mercury"></i> Gender: ${
-          pet.gender ? pet.gender : "Not Available"
-        }</p>
-        <p><i class="fa-solid fa-dollar-sign"></i> Price: ${
-          pet.price ? pet.price : "Not Available"
-        }</p>
+          <div class="md:grid grid-cols-2">
+            <p><i class="fa-solid fa-qrcode"></i> Breed: ${
+              pet.breed ? pet.breed : "Not Available"
+            }</p>
+            <p><i class="fa-regular fa-calendar"></i> Hello Birth: ${
+              pet.date_of_birth ? pet.date_of_birth : "Not Available"
+            }</p>
+            <p><i class="fa-solid fa-mercury"></i> Gender: ${
+              pet.gender ? pet.gender : "Not Available"
+            }</p>
+            <p><i class="fa-solid fa-dollar-sign"></i> Price: ${
+              pet.price ? pet.price : "Not Available"
+            }</p>
+          </div>
         <hr />
     </div>
     <div class="space-y-4">
@@ -208,7 +216,7 @@ const displayAdoptModal = (id) => {
 
     if (num < 0) {
       document.getElementById("adoptionModal").close();
-      console.log(id)
+      console.log(id);
       document.getElementById(`adopt-btn-${id}`).innerText = "Adopted";
 
       clearInterval(clockID);
