@@ -99,7 +99,7 @@ const displayAllPets = (pets) => {
               }')" class="btn bg-white border-1 text-teal-800">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
-              <button class="btn bg-white border-1 text-teal-800">Adopt</button>
+              <button onclick="displayAdoptModal()" class="btn bg-white border-1 text-teal-800">Adopt</button>
               <button onclick="petDetails(${
                 pet.petId
               })" class="btn bg-white border-1 text-teal-800">
@@ -181,6 +181,21 @@ const sortByPrice = async () => {
   const compareByPrice = (a, b) => b.price - a.price;
   const sortedPets = petsArray.sort(compareByPrice);
   displayAllPets(sortedPets);
+};
+
+const displayAdoptModal = () => {
+  const displayCount = document.getElementById("count-down");
+  let num = 3;
+  const clockID = setInterval(() => {
+    num--;
+    displayCount.innerText = num+1;
+    document.getElementById("adoptionModal").showModal();
+    console.log(num);
+    if (num < 0) {
+      document.getElementById("adoptionModal").close();
+      clearInterval(clockID);
+    }
+  }, 1000);
 };
 
 loadCategories();
