@@ -1,4 +1,4 @@
-loadCategories = async () => {
+const loadCategories = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/categories"
   );
@@ -26,7 +26,7 @@ const displayCategories = (categories) => {
   });
 };
 
-loadPetCategory = async (category) => {
+const loadPetCategory = async (category) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${category}`
   );
@@ -60,7 +60,7 @@ loadPetCategory = async (category) => {
   }, 2000);
 };
 
-loadAllPets = async () => {
+const loadAllPets = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/pets"
   );
@@ -133,17 +133,15 @@ const displayAllPets = (pets) => {
   });
 };
 
-petLiked = (petImage) => {
+const petLiked = (petImage) => {
   const lickedContainer = document.getElementById("liked-container");
   const likedImg = document.createElement("img");
   likedImg.src = `${petImage}`;
   likedImg.classList.add("rounded-xl");
-  //   likedImg.classList.add("max-h-20")
-  //   likedImg.innerHTML = `<img class="rounded-lg m-2 object-cover" src="${petImage}" alt="Image of pet">`;
   lickedContainer.appendChild(likedImg);
 };
 
-petDetails = async (id) => {
+const petDetails = async (id) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/pet/${id}`
   );
@@ -154,7 +152,7 @@ petDetails = async (id) => {
   displayModal(pet);
 };
 
-displayModal = (pet) => {
+const displayModal = (pet) => {
   const modalBox = document.getElementById("modal-content");
 
   modalBox.innerHTML = `
