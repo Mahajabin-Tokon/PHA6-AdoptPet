@@ -12,11 +12,11 @@ This is website for pet adoption. You can view available pets and filter via ani
 5. Clicking the adopt button for each pet displays a countdown and changes the button
 
 # ES6 features used:
-1. Arrow functions
-2. Array methods such as forEach
-3. Template strings
-4. Promises
-5. The const keyword
+- Arrow functions
+- Array methods such as forEach
+- Template strings
+- Promises
+- The const keyword
 
 # Live link to the deployed project:
 https://lighthearted-pithivier-2daada.netlify.app/
