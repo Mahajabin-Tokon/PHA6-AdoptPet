@@ -16,7 +16,7 @@ const displayCategories = (categories) => {
     buttonContainer.classList.add("items-center");
     buttonContainer.innerHTML = `   
         <button
-          onclick="loadPetCategory('${item.category}')" class="flex justify-center items-center gap-2 font-bold rounded-lg border-2 px-10 py-2"
+          id="btn-${item.category}" onclick="loadPetCategory('${item.category}')" class="category-btns flex justify-center items-center gap-2 font-bold rounded-lg border-2 px-10 py-2"
         >
           <img src="${item.category_icon}" alt="Icon of the category" />
           <p">${item.category}</p>
@@ -34,6 +34,21 @@ loadPetCategory = async (category) => {
 
   const cardsConainter = document.getElementById("cards-container");
   cardsConainter.classList.remove("grid");
+
+  const allCategoryButtons = document.getElementsByClassName("category-btns");
+  
+  for (let btn of allCategoryButtons) {
+    btn.classList.remove("bg-teal-400");
+    btn.classList.remove("rounded-full");
+    btn.classList.add("rounded-lg");
+  }
+
+  const activeBtn = document.getElementById(`btn-${category}`);
+  
+  activeBtn.classList.remove("rounded-lg");
+  activeBtn.classList.add("bg-teal-400");
+  activeBtn.classList.add("rounded-full");
+  console.log(activeBtn);
 
   cardsConainter.innerHTML = `
     <div class="flex flex-col gap-5 justify-center items-center p-5 bg-slate-300 rounded-xl">
@@ -188,9 +203,9 @@ const displayAdoptModal = () => {
   let num = 3;
   const clockID = setInterval(() => {
     num--;
-    displayCount.innerText = num+1;
+    displayCount.innerText = num + 1;
     document.getElementById("adoptionModal").showModal();
-    console.log(num);
+
     if (num < 0) {
       document.getElementById("adoptionModal").close();
       clearInterval(clockID);
