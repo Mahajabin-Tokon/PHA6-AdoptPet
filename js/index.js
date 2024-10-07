@@ -1,3 +1,4 @@
+// Function to load each category of pets from API
 const loadCategories = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/categories"
@@ -6,6 +7,7 @@ const loadCategories = async () => {
   displayCategories(data.categories);
 };
 
+// Function to display the categories as buttons 
 const displayCategories = (categories) => {
   const categoryContainer = document.getElementById("category");
 
@@ -26,6 +28,7 @@ const displayCategories = (categories) => {
   });
 };
 
+// Function to load all the pets based on the selected category
 const loadPetCategory = async (category) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${category}`
@@ -61,6 +64,7 @@ const loadPetCategory = async (category) => {
   }, 2000);
 };
 
+// Function to load all the pets from API
 const loadAllPets = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/pets"
@@ -69,6 +73,7 @@ const loadAllPets = async () => {
   displayAllPets(data.pets);
 };
 
+// Function to take an array, create cards and display them
 const displayAllPets = (pets) => {
   const cardsConainter = document.getElementById("cards-container");
   cardsConainter.innerHTML = "";
@@ -134,6 +139,7 @@ const displayAllPets = (pets) => {
   });
 };
 
+// Function to add liked pet's photo to the list on the right side
 const petLiked = (petImage) => {
   const lickedContainer = document.getElementById("liked-container");
   const likedImg = document.createElement("img");
@@ -142,6 +148,7 @@ const petLiked = (petImage) => {
   lickedContainer.appendChild(likedImg);
 };
 
+// Function to get details of each pet based on id
 const petDetails = async (id) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/pet/${id}`
@@ -153,6 +160,7 @@ const petDetails = async (id) => {
   displayModal(pet);
 };
 
+// Fucntion to fill modal with pet details and display the modal
 const displayModal = (pet) => {
   const modalBox = document.getElementById("modal-content");
 
@@ -196,6 +204,7 @@ const displayModal = (pet) => {
   document.getElementById("petModal").showModal();
 };
 
+// Function to sort all pets in descending order of price
 const sortByPrice = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/pets"
@@ -208,6 +217,7 @@ const sortByPrice = async () => {
   displayAllPets(sortedPets);
 };
 
+// Function to display countdown modal upon Adopt button click
 const displayAdoptModal = (id) => {
   const displayCount = document.getElementById("count-down");
   let num = 3;
