@@ -114,7 +114,7 @@ const displayAllPets = (pets) => {
               }')" class="btn bg-white border-1 text-teal-800">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
-              <button onclick="displayAdoptModal()" class="btn bg-white border-1 text-teal-800">Adopt</button>
+              <button id="adopt-btn-${pet.petId}" onclick="displayAdoptModal(${pet.petId})" class="btn bg-white border-1 text-teal-800">Adopt</button>
               <button onclick="petDetails(${
                 pet.petId
               })" class="btn bg-white border-1 text-teal-800">
@@ -198,7 +198,7 @@ const sortByPrice = async () => {
   displayAllPets(sortedPets);
 };
 
-const displayAdoptModal = () => {
+const displayAdoptModal = (id) => {
   const displayCount = document.getElementById("count-down");
   let num = 3;
   const clockID = setInterval(() => {
@@ -208,6 +208,9 @@ const displayAdoptModal = () => {
 
     if (num < 0) {
       document.getElementById("adoptionModal").close();
+      console.log(id)
+      document.getElementById(`adopt-btn-${id}`).innerText = "Adopted";
+
       clearInterval(clockID);
     }
   }, 1000);
