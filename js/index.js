@@ -38,17 +38,18 @@ const loadPetCategory = async (category) => {
   const allCategoryButtons = document.getElementsByClassName("category-btns");
 
   for (let btn of allCategoryButtons) {
-    btn.classList.remove("bg-teal-400");
+    btn.classList.remove("bg-teal-100");
     btn.classList.remove("rounded-full");
+    btn.classList.remove("border-teal-500");
     btn.classList.add("rounded-lg");
   }
 
   const activeBtn = document.getElementById(`btn-${category}`);
 
   activeBtn.classList.remove("rounded-lg");
-  activeBtn.classList.add("bg-teal-400");
+  activeBtn.classList.add("bg-teal-100");
   activeBtn.classList.add("rounded-full");
-  console.log(activeBtn);
+  activeBtn.classList.add("border-teal-500");
 
   cardsConainter.innerHTML = `
     <div class="flex flex-col gap-5 justify-center items-center p-5 bg-slate-300 rounded-xl">
@@ -110,18 +111,18 @@ const displayAllPets = (pets) => {
               }</p>
               <hr />
             </div>
-            <div class="flex gap-2 justify-center">
+            <div class="flex gap-2 justify-evenly">
               <button onclick="petLiked('${
                 pet.image
-              }')" class="btn bg-white border-1 text-teal-800">
+              }')" class="btn bg-white border-1 text-teal-800 lg:px-6">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
               <button id="adopt-btn-${pet.petId}" onclick="displayAdoptModal(${
       pet.petId
-    })" class="btn bg-white border-1 text-teal-800">Adopt</button>
+    })" class="btn bg-white border-1 text-teal-800 lg:px-6">Adopt</button>
               <button onclick="petDetails(${
                 pet.petId
-              })" class="btn bg-white border-1 text-teal-800">
+              })" class="btn bg-white border-1 text-teal-800 lg:px-6">
                 Details
               </button>
             </div>
@@ -176,6 +177,9 @@ const displayModal = (pet) => {
             <p><i class="fa-solid fa-dollar-sign"></i> Price: ${
               pet.price ? pet.price : "Not Available"
             }</p>
+            <p><i class="fa-solid fa-mercury"></i> Vaccinated Status: ${
+              pet.vaccinated_status ? pet.vaccinated_status : "Not Available"
+            }</p>
           </div>
         <hr />
     </div>
@@ -214,7 +218,6 @@ const displayAdoptModal = (id) => {
 
     if (num < 0) {
       document.getElementById("adoptionModal").close();
-      console.log(id);
       document.getElementById(`adopt-btn-${id}`).innerText = "Adopted";
 
       clearInterval(clockID);
