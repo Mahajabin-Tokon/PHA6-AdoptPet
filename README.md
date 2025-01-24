@@ -1,7 +1,20 @@
 # Peddy - Pet Adoption Platform
 
+## Live Link
+https://lighthearted-pithivier-2daada.netlify.app/
+
+--- 
+
 ## Description
 **Peddy** is a dynamic and responsive web application designed to connect individuals and families with their ideal pets for adoption. The platform provides an engaging interface to explore various pet categories, view detailed pet profiles, and initiate the adoption process seamlessly. With its modern design, real-time updates, and interactive features, **Peddy** serves as a one-stop solution for pet lovers.
+
+---
+
+## Packages and Libraries Used
+- **TailwindCSS**: For building the responsive layout and styling.
+- **DaisyUI**: For pre-styled, customizable UI components.
+- **FontAwesome**: For icons used throughout the application.
+- **JavaScript**: To fetch and manipulate data for categories, pets, and individual pet details.
 
 ---
 
@@ -37,15 +50,7 @@
 
 ---
 
-## Packages and Libraries Used
-- **TailwindCSS**: For building the responsive layout and styling.
-- **DaisyUI**: For pre-styled, customizable UI components.
-- **FontAwesome**: For icons used throughout the application.
-- **JavaScript**: To fetch and manipulate data for categories, pets, and individual pet details.
-
----
-
-## Future Enhancements
+## Future Enhancement Ideas
 1. **User Authentication**:
    - Implement login and registration to personalize the user experience and save liked pets across sessions.
 
