@@ -55,17 +55,3 @@
 3. **Donation Feature**:
    - Allow users to donate directly to support animal welfare causes through the platform.
 
----
-
-## Author
-This project was created by **Mahajabin Tokon**.
-
----
-
-## License
-This project is licensed under the **MIT License**.
-
----
-
-## Date
-**January 24, 2025**
