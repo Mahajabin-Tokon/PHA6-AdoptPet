@@ -1,66 +1,71 @@
 # Peddy - Pet Adoption Platform
 
-Peddy is a responsive, user-friendly web application designed to streamline the pet adoption process. The platform offers a dynamic and interactive experience for users to explore various pet categories, view detailed pet profiles, and engage with adoption functionalities. Built with modern web technologies, Peddy emphasizes clean design, responsiveness, and seamless interaction to enhance user engagement.
+## Description
+**Peddy** is a dynamic and responsive web application designed to connect individuals and families with their ideal pets for adoption. The platform provides an engaging interface to explore various pet categories, view detailed pet profiles, and initiate the adoption process seamlessly. With its modern design, real-time updates, and interactive features, **Peddy** serves as a one-stop solution for pet lovers.
 
 ---
 
 ## Key Features
+1. **Dynamic Pet Categories**:
+   - Categories are fetched from an API and displayed as buttons for easy navigation.
+   - Each button loads pets specific to the selected category.
 
-1. **Dynamic Pet Categories**  
-   - Categories are fetched from an API and displayed dynamically as clickable buttons.  
-   - Each button loads pets relevant to the selected category.  
+2. **Detailed Pet Profiles**:
+   - Displays information like name, breed, birthdate, gender, and price.
+   - Provides quick actions such as liking, viewing details, and adopting pets.
 
-2. **Detailed Pet Profiles**  
-   - Displays essential details about pets, including images, breed, birth date, gender, price, and vaccination status.  
-   - Features a modal that provides in-depth information about each pet.  
+3. **Adoption Countdown Modal**:
+   - A unique adoption process starts with a countdown modal, adding an interactive touch.
 
-3. **Interactive Functionality**  
-   - Users can "like" pets, and their photos are visually added to a liked list for easy reference.  
-   - Adoption countdown modal triggers when the adoption button is clicked, confirming the start of the adoption process.  
+4. **Liked Pets List**:
+   - Allows users to save favorite pets by adding their photos to a "Liked" section.
 
-4. **Sorting by Price**  
-   - Pets can be sorted in descending order of price, allowing users to identify the best deals.  
+5. **Sort by Price**:
+   - Users can sort pet listings in descending order of price to find the best deals.
 
-5. **Responsive Design**  
-   - Built using **TailwindCSS** and **DaisyUI** to ensure a seamless experience across various devices and screen sizes.  
+6. **Responsive Design**:
+   - Built using **TailwindCSS** and **DaisyUI**, ensuring a seamless experience on any device.
 
-6. **Social Media Integration**  
-   - Includes links to social media platforms like Facebook, Twitter, Instagram, and YouTube for enhanced visibility.  
+7. **Interactive Modals**:
+   - A modal displays detailed pet information fetched dynamically via API.
 
-7. **Footer and Subscription Section**  
-   - Provides contact information, useful links, and a subscription form for users to stay updated.  
+8. **Professional Footer**:
+   - Includes contact details, useful links, and a subscription form.
 
-8. **Error Handling**  
-   - Displays a friendly error message if no pets are available in the selected category.  
-
-9. **Modern UI/UX**  
-   - Clean, professional design with consistent styling, animations, and a visually appealing layout.  
+9. **Real-Time Updates**:
+   - Fetches and displays real-time pet and category data from the API.
 
 ---
 
-## Packages and Tools Used
-
-- **[TailwindCSS](https://tailwindcss.com/)**  
-  - Utility-first CSS framework for responsive and scalable styling.  
-
-- **[DaisyUI](https://daisyui.com/)**  
-  - TailwindCSS-based UI components for rapid development.  
-
-- **[FontAwesome](https://fontawesome.com/)**  
-  - Icon library for adding interactive and aesthetic icons.  
-
-- **JavaScript Fetch API**  
-  - Used for asynchronous data fetching from the backend API.  
+## Packages and Libraries Used
+- **TailwindCSS**: For building the responsive layout and styling.
+- **DaisyUI**: For pre-styled, customizable UI components.
+- **FontAwesome**: For icons used throughout the application.
+- **JavaScript**: To fetch and manipulate data for categories, pets, and individual pet details.
 
 ---
 
-## Getting Started
+## Future Enhancements
+1. **User Authentication**:
+   - Implement login and registration to personalize the user experience and save liked pets across sessions.
 
-### Prerequisites
-- A modern web browser that supports JavaScript ES6+ features.
-- A stable internet connection to fetch API data.
+2. **Advanced Search and Filtering**:
+   - Add filters for pet breed, age, and price range to make browsing more intuitive.
 
-### Installation
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/yourusername/peddy.git
+3. **Donation Feature**:
+   - Allow users to donate directly to support animal welfare causes through the platform.
+
+---
+
+## Author
+This project was created by **Mahajabin Tokon**.
+
+---
+
+## License
+This project is licensed under the **MIT License**.
+
+---
+
+## Date
+**January 24, 2025**
